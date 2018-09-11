@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>armazena</title>
+</head>
+<body onload="carrega()">
+
+  <script>
+
+     function aciona () {
+     	var valor = document.getElementById('texto').value;
+     	localStorage.setItem('text',valor);
+     }
+
+     function carrega () {
+     	var valor = localStorage.getItem('text');
+     	if (valor) {
+     		document.getElementById('texto').value = valor;
+     	}
+     }
+
+     function remove () {
+     	document.getElementById('texto').value = '';
+     	localStorage.removeItem('text');
+     }
+
+  </script>	
+
+<input type="text" id="texto">
+<button onclick="aciona()">Salvar</button>
+<button onclick="remove()">remover</button>
+</body>
+</html>
